@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>N180749</title>
+	<link rel="stylesheet" type="text/css" href="lab.css">
+	<link rel="stylesheet" type="text/css" href="sample.js">
+</head>
+<div>
+    <center>
+	<table class="example">
+	<tr><td><u>F1H20</u><sub style="color:red">rgukt</sub>
+	</center>
+    </td>
+</tr>
+</table>
+</div>
+ <script>
+    function changeBg(){
+        const images=[
+            'url("nature.jpg")',
+            'url("snow.jpeg")',
+            'url("maa.jpg")',
+            'url("nature.jpg")',
+    
+        ]
+        const section=document.querySelector("#img")
+        const bg=images[Math.floor(Math.random()* images.length )];
+        img.style.backgroundImage=bg;
+    }
+    setInterval(changeBg,500)
+    </script>
+
+   <script type="text/javascript">
+        function validate(){
+        var fn1=username();
+        var fn2=phonenumber();
+        var fn3=email();
+        var fn4=Cvalidation();
+        var fn5=ddvalidation();
+        var fn6=rent();
+        return(fn1&&fn2&&fn3&&fn4&&fn5&&fn6);
+        }
+	 function username(){
+	 	var fn=document.getElementById("user").value;
+	 	var p=/^([F])([a-z,A-Z]{3,9})+$/;
+	 	if(p.test(fn))
+	 	{
+            return true;
+	 	}
+	 	else
+	 	{   p2.style.visibility="visible";
+	 		return false;
+	 	}
+
+ }
+	
+ 	function Email(){
+            var E=document.getElementById("email").value;
+            var E1=document.getElementById("email");
+            var ere=/^\w+([\.-]?\w+,@,\,)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (ere.test(E)) {
+                return true;
+            }
+            else {
+                E1.style.border="red solid 3px";
+                return false;
+
+            }   
+        }
+ function phonenumber(){
+  var ph=document.getElementById("mobile").value;
+  var i=/^[977]\d{7}$/;
+  var j=/^\(?([0-9]{4})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+  if(i.test(ph) )
+ {
+   return true;
+ }
+ else if(j.test(ph))
+ {
+    return true;
+ }
+ else
+ {
+    ph.style.border="red solid 3px";
+                return false;
+
+ }
+
+  }
+function Cvalidation(){
+            var C=document.getElementById("country").value;
+            var C1=document.getElementById("country");
+            if(C==="AMERICA"||"ENGLAND"||"GERMANY")
+            {
+            beer.style.display="block";
+                return true;
+            }
+            else{
+                return false;
+            }
+
+        }
+function DDvalidation(){
+            var dd1=document.getElementById("payment").value;
+            var dd2=document.getElementById("payment");
+            var ddre=/^SBIN\d{8}$/;
+            if(ddre.test(dd1)){
+                return true;
+            }
+            else{
+                payment.style.border="red solid 2px";
+                return false;
+            }
+        }
+
+        // function rent(){
+        //     var n=document.getElementById("staying").value;
+        //     if(document.getElementById("1").checked||document.getElementById("4").checked||){
+        //         var rent1=2000*Number(n);
+                
+                
+        //     }
+        //     else
+        //     {
+        //         return false;
+        //     }
+        // }
+
+ </script>
+<div>
+<body onload="//changeImage()">
+<div class="div1"> 
+</div>
+<div class="container" id="img" >
+</div>
+    <form action="/sk.php" method="post" onsubmit="return validate();" >
+        <table align="center" cellpadding="10" class="table">
+           
+        <!-- user name -->
+            <tr>
+                <td>USER NAME</td>
+                <td><input type="text" onkeyup="this.value=this.value.toUpperCase()" id="user"><label id="p1" style="red;visibility: hidden;">invalid data</label></td>
+            </tr>
+        <!-- email -->
+            <tr>
+                <td>EMAIL</td>
+                <td><input name="email" maxlength="30" placeholder="enter your email " id="email"><label id="p2" style="red;visibility: hidden;">invalid data</label></td>
+            </tr>
+        <!--mobile number -->
+            <tr>
+                <td>MOBILE NUMBER</td>
+                <td><input type="number" name="number" maxlength="30" placeholder="enter your mobile number " id="mobile"><label id="p3" style="red;visibility: hidden;">invalid data</label></td>
+            </tr>
+
+         <!--country -->
+            <tr>
+                <td>COUNTRY</td>
+                    <td><select name="Country" id="country"><label id="p4" style="red;visibility: hidden;">invalid data</label>
+                      <option value="Select Your country">Select Your Country</option>
+                      <option value="AMERICA">AMERICA</option>
+                      <option value="INDIA">INDIA</option>
+                      <option value="ENGLAND">ENGLAND</option>
+                      <option value="GERMANY">GERMANY</option>
+                     </select>
+                 </td>
+            </tr>
+           <!--payment type-->
+            <tr>
+                <td>PAYMENT TYPE</td>
+                <td><input type="text" name="payment" maxlength="30" placeholder="payment type " id="payment"><label id="p5" style="red;visibility: hidden;">invalid data</label>
+                </td>
+            </tr>
+           <!--type of accomidation -->
+            <tr id="accomidation">
+                <td>TYPE OF ACCOMIDATION</td> <label id="p6" style="red;visibility: hidden;">invalid data</label>  
+                    <td><input type="radio" id="1" name="N" value="NUZVIDU"> <label for="html">NUZVIDU</label>
+               <input type="radio" id="2" name="N" value="ONGOLE"><label for="css">ONGOLE</label>
+               <input type="radio" id="3" name="N" value="RK VALLY"><label for="javascript">KADAPA</label>
+                    <input type="radio" id="4" name="N" value="NUZVIDU"><label for="javascript">SKLM</label>
+                </td>
+            </tr>
+            <!...services required...>
+            <tr>
+                <td>SERVICES REQUIRED</td><label id="p7" style="red;visibility: hidden;">invalid data</label>
+                <td><input type="checkbox" id="ch1" name="ch1" value="ch1"><label for="ch1"> BREAKFAST </label>
+                    <input type="checkbox" id="ch2" name="ch1" value="ch2"><label for="ch2"> LUNCH</label>
+                   <input type="checkbox" id="ch3" name="ch1" value="ch3"><label for="ch3"> SNACKS</label>
+                   <input type="checkbox" id="ch3" name="ch1" value="ch3"><label for="ch3"> TEA</label>
+                   <input type="checkbox" id="ch3" name="ch1" value="ch3"><label for="ch3"> COFFE</label>
+                   <input type="checkbox" id="ch3" name="ch1" value="ch3"><label for="ch3"> EGG</label></td>
+               </tr>
+                 
+            <tr>
+                <td>NO OF DAYS STAYING</td>
+                <td><input type="number" name="staying" maxlength="30" placeholder="enter no of days staying" id="staying"><label id="p8" style="red;visibility: hidden;">invalid data</label></td>
+            </tr>
+            <!--register -->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" value="submit"  id="submit" style="width:20%">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
